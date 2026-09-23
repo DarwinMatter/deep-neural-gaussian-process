@@ -1,5 +1,7 @@
-*.pyc
+.git
+.gitignore
 __pycache__/
+*.pyc
 output/
+*.png
 .DS_Store
-miniconda_x86.sh
