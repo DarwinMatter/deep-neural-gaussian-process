@@ -5,9 +5,9 @@ Jascha Sohl-dickstein
 
 To clone this repository, follow the following steps:
 
-git clone https://github.com/DarwinMatter/deep-neural-gaussian-process/tree/main nngp-test
+git clone https://github.com/DarwinMatter/deep-neural-gaussian-process nngp
 
-cd nngp-test
+cd nngp
 
 docker build -t nngp-project .
 
