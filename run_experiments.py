@@ -131,6 +131,8 @@ def run_nngp_eval(hparams, run_dir):
     nonlin_fn = tf.tanh
   elif hparams.nonlinearity == 'relu':
     nonlin_fn = tf.nn.relu
+  elif hparams.nonlinearity == 'sigmoid':
+    nonlin_fn = tf.nn.sigmoid
   else:
     raise NotImplementedError
 
