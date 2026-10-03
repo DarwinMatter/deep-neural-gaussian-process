@@ -5,13 +5,11 @@ Jascha Sohl-dickstein
 
 To clone this repository, follow the following steps:
 
-git clone https://github.com/DarwinMatter/deep-neural-gaussian-process nngp
-
+```git clone https://github.com/DarwinMatter/deep-neural-gaussian-process nngp
 cd nngp
-
 docker build -t nngp-project .
-
 docker run nngp-project
+```
 
 # Target figures:
 
@@ -31,17 +29,13 @@ In addition, we generate Figure 3 by using run_experiment.py. To generate Figure
 
 4. Then, to generate the image, run (in this example nonlinearityfunction = relu and deep=50)
 
-python heat_map_figure.py  
+```python heat_map_figure.py  
 --weight_vars=0.5,0.9,1.3,1.7,2.1,2.5,2.9,3.3,3.7,4.0  --bias_vars=0.0,0.3,0.6,0.9,1.2,1.5,1.8,2.0 --depth=50 
-
 --nonlinearity=relu 
-
 --num_train=100 
-
 --num_eval=1000 
-
 --output_file=/nngp/heat_map_intermediate_relu.png
-
+```
 This image is saved inside the docker container as “heat_map_intermediate_relu.png”.
 
 6. In order to export the image to the computer, one have to exit the docker and copy the image to the computer as follows:
@@ -61,9 +55,7 @@ If one wants to generate the graph associated with the nonlinear function “tan
 In our case, we generated three heat maps: one for relu, tanh, and sigmoid. In order to avoid memory limitation issues, we consider a smaller grid than the one used in the original paper. Moreover, to avoid memory or runtime issues when computing the F matrix, we consider the following modification: as stated in the paper, item 2. page 5, the construction of the matrix F “involves numerically approximating a Gaussian integral, in terms of the marginal variances s and correlations c”. In order to avoid this, we use the next values for gaussian integration grid, and variances and correlations grid: 
 
         ‘--n_gauss=101', 	default value =501
-        
         '--n_var=151', 		default value =501
-        
         '--n_corr=131', 		default value =500
     
 which are smaller compared with the default values. 
