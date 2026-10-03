@@ -5,7 +5,8 @@ Jascha Sohl-dickstein
 
 To clone this repository, follow the following steps:
 
-```git clone https://github.com/DarwinMatter/deep-neural-gaussian-process nngp
+```
+git clone https://github.com/DarwinMatter/deep-neural-gaussian-process nngp
 cd nngp
 docker build -t nngp-project .
 docker run nngp-project
@@ -29,7 +30,8 @@ In addition, we generate Figure 3 by using run_experiment.py. To generate Figure
 
 4. Then, to generate the image, run (in this example nonlinearityfunction = relu and deep=50)
 
-```python heat_map_figure.py  
+```
+python heat_map_figure.py  
 --weight_vars=0.5,0.9,1.3,1.7,2.1,2.5,2.9,3.3,3.7,4.0  --bias_vars=0.0,0.3,0.6,0.9,1.2,1.5,1.8,2.0 --depth=50 
 --nonlinearity=relu 
 --num_train=100 
